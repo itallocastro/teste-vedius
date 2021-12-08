@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="custom-toolbar">
+    <span class="name" (click)="goHome()">Teste Vedius</span>
+    <span class="spacer"></span>
+    <button mat-icon-button aria-label="Ir para o carrinho" class="shopping-cart" (click)="goCart()">
+      <mat-icon [matBadge]="getLengthCart()" matBadgeColor="warn">shopping_cart</mat-icon>
+    </button>
+    <button mat-icon-button aria-label="Menu" class="menu" (click)="openMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar-row>
+
+</mat-toolbar>
+<ng-template [ngIf]="open">
+  <mat-toolbar color="primary" class="responsive-toolbar">
+    <mat-toolbar-row style="display: flex; justify-content: center">
+      <button mat-icon-button class="custom-button" (click)="goCart()">
+        <span style="margin-right: 10px">Ir para o carrinho</span>
+        <mat-icon [matBadge]="getLengthCart()" matBadgeColor="warn">shopping_cart</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</ng-template>

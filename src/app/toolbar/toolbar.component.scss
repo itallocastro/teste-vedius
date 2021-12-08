@@ -1,0 +1,29 @@
+.spacer {
+  flex: 1 1 auto;
+}
+.menu {
+  display: none;
+}
+.custom-toolbar {
+  padding: 0 24px;
+}
+.responsive-toolbar {
+  display: none;
+}
+.name {
+  cursor: pointer;
+}
+@media all and (max-width: 900px) {
+  .responsive-toolbar {
+    display: block;
+  }
+  .menu {
+    display: block;
+  }
+  .shopping-cart {
+    display: none;
+  }
+  .custom-button {
+    width: 200px;
+  }
+}

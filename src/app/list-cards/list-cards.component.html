@@ -1,0 +1,43 @@
+<div *ngIf="mockLoading" class="loading">
+  <mat-spinner diameter="80"></mat-spinner>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-sm-12 mb-5"  *ngFor="let item of items">
+      <mat-card class="custom-card">
+        <img mat-card-image [src]="item.urlImage" alt="Photo of a Shiba Inu" width="277px" height="221px">
+        <mat-card-title-group>
+          <mat-card-title>
+            {{item.title}}
+          </mat-card-title>
+          <mat-card-subtitle>
+            {{item.subtitle}}
+          </mat-card-subtitle>
+        </mat-card-title-group>
+        <mat-card-content>
+          <p>
+            {{item.text}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions style="display:flex; justify-content: end">
+          <button
+            mat-button
+            color="primary"
+            (click)="addItem(item)"
+            [disabled]="(idSelected === item.id)"
+            *ngIf="alreadySelectedItem(item.id)">
+            Adicionar ao Carrinho
+          </button>
+          <button
+            mat-button
+            color="warn"
+            (click)="removeItem(item.id)"
+            [disabled]="(idSelected === item.id)"
+            *ngIf="!alreadySelectedItem(item.id)">
+            Adicionado ao Carrinho
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

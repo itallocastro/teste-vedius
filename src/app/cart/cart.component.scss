@@ -1,0 +1,41 @@
+@import '../../styles/card.style';
+* {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  margin-top: 200px;
+}
+.footer-container {
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-container h3 {
+  font-size: 32px;
+}
+
+.custom-row {
+  margin-bottom: 100px;
+}
+
+.empty-car {
+  text-align: center;
+  & h2 {
+    font-size: 32px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .footer-container {
+    display: block;
+    text-align: center;
+  }
+}
